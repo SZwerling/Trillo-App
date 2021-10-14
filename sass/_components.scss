@@ -73,17 +73,17 @@
 ///////////////////////////////////////////////////
 /////////// User Nav
 .user-nav {
-    align-self: stretch;
+    align-self: stretch; //user-nav is flex-item within header, align-self is cross axis, stretch fills vertically
 
-    display: flex;
-    align-items: center;
+    display: flex;  //container within container, svg's and user photo
+    align-items: center;  //to align items vertically along cross axis
 
-    //select all direct children of user-nave
+    //select all direct children of user-nav, icons and user photo
     & > * {
         padding: 0 2rem;
         cursor: pointer;
-        height: 100%;
-        display: flex;
+        height: 100%; //all items take up available space, to see whole box change on hover
+        display: flex; //so all direct children have content centered vertically, icon-box & user
         align-items: center;
     }
 
@@ -92,28 +92,28 @@
     }
 
     &__icon-box {
-        position: relative;
+        position: relative; //to position child element of __notification
     }
 
-    &__icon {
+    &__icon {  //for svg's
         height: 2.25rem;
         width: 2.25rem;
         fill: var(--color-Grey-dark-2);
         
     }
 
-    &__notification {
+    &__notification { //little numbers
         font-size: .8rem;
         height: 1.75rem;
         width: 1.75rem;
         border-radius: 50%;
         background-color: var(--color-primary);
         color: #fff;
-        position: absolute;
+        position: absolute; //parent is icon-box
         top: 1.5rem;
         right: 1.1rem;
 
-        display: flex;
+        display: flex; //to center little numbers - flexbox works w text
         justify-content: center;
         align-items: center;
     }
@@ -131,4 +131,32 @@
     &__user-name {
 
     }
+}
+
+//////////////////////////////////////////////////
+////////// Side Navigation
+
+.side-nav {
+
+    &__item {
+
+    }
+
+    &__link {
+
+    }
+
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
+//////////////////////////////////////////////////
+////////// Legal Text
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-Grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
 }
