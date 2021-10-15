@@ -144,14 +144,14 @@
     &__item {
         position: relative;
 
-        &:not(:last-child) {
+        &:not(:last-child) {  //add margin bottom on all items except last
             margin-bottom: .5rem;
         }
     }
 
     &__item::before {
         content: "";
-        position: absolute;
+        position: absolute; //positioned in relation to 'parent' __item
         top: 0;
         left: 0;
         height: 100%;
@@ -163,7 +163,7 @@
                     background-color .1s;
     }
 
-    &__item:hover::before {
+    &__item:hover::before {  //acts on before psuedo element scaleY(0) to (1)
         transform: scaleY(1);
         width: 100%;
     }
@@ -179,10 +179,10 @@
         text-transform: uppercase;
         display: block;
         padding: 1.5rem 3rem;
-        position: relative;
-        z-index: 10;
+        position: relative; //need position for z-index to work
+        z-index: 10;  //to put link on top of before psuedo element
 
-        display: flex;
+        display: flex; //to align svg and text
         align-items: center;
     }
 
@@ -202,3 +202,57 @@
     text-align: center;
     padding: 2.5rem;
 }
+
+//////////////////////////////////////////////////
+////////// Gallery
+.gallery {
+    display: flex;
+
+    &__item {
+
+    }
+    
+    &__photo {
+        width: 100%;
+        display: block;
+    }
+}
+
+//////////////////////////////////////////////////
+////////// Hotel Overview
+.overview {
+    display: flex;
+    
+
+    &__heading {
+
+    }
+
+    &__stars {
+        margin-right: auto;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary)
+    }
+
+    &__location {
+
+    }
+
+    &__rating {
+
+    }
+
+    &__rating-average {
+
+    }
+
+    &__rating-count {
+
+    }
+}
+

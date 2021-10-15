@@ -30,12 +30,11 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; //puts legal at bottom, nav at top
 
 }
 
 .hotel-view {
-    background-color: orangered;
     flex: 1;
     height: 80rem;
 
